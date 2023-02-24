@@ -24,10 +24,28 @@ int main()
     }
 
     work = true;
-    while(work = true){
-        firstcard = deck1[1];
-        secondcard = deck2[1];
+    while(work){
+
+        if (deck1.empty()){
+            cout << iter << " " << "Jhon";
+            work = false;
+            return 0;
+        } 
+        else if (deck2.empty()){
+            cout << iter << " " << "Peter";
+            work = false;
+            return 0;
+        } 
+        else if (deck1.empty() && deck2.empty()){
+            cout << "Both losers";
+            work = false;
+            return 0;
+        }
+
         iter++;
+        firstcard = deck1.at(0);
+        secondcard = deck2.at(0);
+        
 
         if (firstcard > secondcard){
             deck1.erase(deck1.begin());
@@ -41,18 +59,7 @@ int main()
             deck2.push_back(firstcard);
             deck2.push_back(secondcard);
         } 
-        else if (deck1.empty()){
-            cout << iter << " " << "Peter";
-            work = false;
-        } 
-        else if (deck2.empty()){
-            cout << iter << " " << "Jhon";
-            work = false;
-        } 
-        else if (deck1.empty() && deck2.empty()){
-            cout << "Both losers";
-            work = false;
-        }
+        
     }
 
 }
