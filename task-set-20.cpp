@@ -9,24 +9,19 @@ int main(){
 
     cin >> x >> y;
 
-    int s[x*y];
+    
     set<int> one;
 
-    
-	  	for(int j = 0; j < x*y ; j++)
-	  	{
-	  		
-	  		cin>>s[j];
-		}
-	   
+for (int k = 0; k < x; k++) {
+	for(int l = 0; l < y; l++) {
+		int num;
+		cin >> num;
 
-    for(int i = 0; i < x;i++)
-	  {
-	  	for(int j = 0; j < y*x ; j++)
-	  	{
-	  		
-	  		one.insert(s[j]);
-		}
-	  } 
+	if(k == 0 || l == 0 || k == x - 1 || l == y -1){
+		one.insert(num);
+	}
+	}
+}
+	 
     cout << one.size();
 }
